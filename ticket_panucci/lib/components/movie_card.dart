@@ -11,10 +11,9 @@ class MovieCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Card(
-            clipBehavior: Clip.hardEdge,
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(minHeight: 200),
+        Expanded(
+          child: Card(
+              clipBehavior: Clip.hardEdge,
               child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -37,8 +36,8 @@ class MovieCard extends StatelessWidget {
                           child: const Center(
                             child: Icon(Icons.error),
                           ),
-                        )),
-            )),
+                        ))),
+        ),
         Text(
           movie.name,
           style: Theme.of(context).textTheme.displaySmall,
