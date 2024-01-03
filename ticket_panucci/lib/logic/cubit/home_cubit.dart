@@ -1,7 +1,6 @@
 import 'package:bilheteria_panucci/models/movie.dart';
 import 'package:bilheteria_panucci/services/movies_api.dart';
 import 'package:bloc/bloc.dart';
-import 'package:http/http.dart';
 
 part 'home_states.dart';
 
