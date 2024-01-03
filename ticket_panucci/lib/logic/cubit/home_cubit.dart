@@ -27,7 +27,7 @@ class HomeCubit extends Cubit<HomeStates> {
       }
       emit(HomeSuccess(movies));
     } catch (e) {
-      emit(HomeError('Não há filmes disponíveis com este genero!'));
+      emit(HomeError('Não foi possível carregar filmes com este genero!'));
     }
   }
 }
