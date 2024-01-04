@@ -1,0 +1,19 @@
+{
+  "learnhttp": {
+    "content": "ola mundo"
+  },
+  "journals": [
+    {
+      "id": "862a8a00-e1d3-1e39-bfa0-b7ab9f4634b4",
+      "content": "",
+      "createdAt": "2024-01-04 15:04:42.532041",
+      "updated": "2024-01-04 15:04:42.532041"
+    },
+    {
+      "id": "41595d30-e1d7-1e39-bfa0-b7ab9f4634b4",
+      "content": "a",
+      "createdAt": "2023-12-26 15:04:42.933894",
+      "updated": "2023-12-26 15:04:42.933894"
+    }
+  ]
+}
