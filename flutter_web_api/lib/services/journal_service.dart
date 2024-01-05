@@ -19,17 +19,26 @@ class JournalService {
   Future<bool> register(Journal journal) async {
     String jsonJournal = json.encode(journal.toMap());
     http.Response response = await client.post(Uri.parse(getUrl()),
-        headers: {"Content-type": "application/json"},
-        body: jsonJournal);
+        headers: {"Content-type": "application/json"}, body: jsonJournal);
     if (response.statusCode == 201) {
       return true;
     }
     return false;
   }
 
-  Future<String> get() async {
+  Future<List<Journal>> getAll() async {
     http.Response response = await client.get(Uri.parse(getUrl()));
-    print(response.body);
-    return response.body;
+    if (response.statusCode != 200) {
+      throw Exception();
+    }
+
+    List<Journal> list = [];
+
+    List<dynamic> listDynamic = json.decode(response.body);
+
+    for (var jsonMap in listDynamic) {
+      list.add(Journal.fromMap(jsonMap));
+    }
+    return list;
   }
 }
