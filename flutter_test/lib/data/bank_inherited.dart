@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class BankInherited extends InheritedWidget {
   BankInherited({
-    Key? key,
-    required Widget child,
-  }) : super(key: key, child: child);
+    super.key,
+    required super.child,
+  });
 
   final BankModel values = BankModel();
 

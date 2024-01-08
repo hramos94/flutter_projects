@@ -5,7 +5,7 @@ import '../activity.dart';
 import '../box_card.dart';
 
 class ActionsSection extends StatelessWidget {
-  const ActionsSection({Key? key}) : super(key: key);
+  const ActionsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class ActionsSection extends StatelessWidget {
                         BankInherited.of(context).values.deposit(10);
                         // print(BankInherited.of(context).values.points);
                       },
-                      child: BoxCard(
+                      child: const BoxCard(
                         boxCardBody:
                             Activity(
                             mainIcon: Icon(
@@ -37,7 +37,7 @@ class ActionsSection extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: (){BankInherited.of(context).values.transfer(10);},
-                      child: BoxCard(
+                      child: const BoxCard(
                         boxCardBody:
                             Activity(
                             mainIcon: Icon(
@@ -48,7 +48,7 @@ class ActionsSection extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: (){},
-                      child: BoxCard(
+                      child: const BoxCard(
                         boxCardBody:
                             Activity(
                             mainIcon: Icon(

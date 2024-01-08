@@ -9,7 +9,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: BankInherited(
-          child: Home(),
+          child: const Home(),
         ),
       ),
     );
@@ -22,7 +22,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: BankInherited(
-          child: Home(),
+          child: const Home(),
         ),
       ),
     );
@@ -32,18 +32,18 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: BankInherited(
-          child: Home(),
+          child: const Home(),
         ),
       ),
     );
-    expect(find.byKey(Key('testKey')), findsOneWidget);
+    expect(find.byKey(const Key('testKey')), findsOneWidget);
   });
 
   testWidgets('Find 5 BoxCards', (tester) async {
     await tester.pumpWidget(
       MaterialApp(
         home: BankInherited(
-          child: Home(),
+          child: const Home(),
         ),
       ),
     );
@@ -59,7 +59,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: BankInherited(
-          child: Home(),
+          child: const Home(),
         ),
       ),
     );
