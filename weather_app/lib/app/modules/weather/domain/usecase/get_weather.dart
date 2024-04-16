@@ -3,7 +3,7 @@ import 'package:weather_app/app/modules/weather/domain/errors/errors_weather.dar
 import 'package:weather_app/app/modules/weather/domain/repositories/weather_repository.dart';
 
 abstract class IGetWeather {
-  Future<(IWeatherException?, Weather)> call(double latitude, double longitude);
+  Future<(IWeatherException?, Weather?)> call(double latitude, double longitude);
 }
 
 class GetWeather implements IGetWeather {
@@ -12,7 +12,7 @@ class GetWeather implements IGetWeather {
   GetWeather(this._weatherRepository);
 
   @override
-  Future<(IWeatherException?, Weather)> call(
+  Future<(IWeatherException?, Weather?)> call(
       double latitude, double longitude) async {
     return await _weatherRepository.getWeather(latitude, longitude);
   }
