@@ -5,17 +5,18 @@ class Weather {
   final double minTemperature;
   final double currentTemp;
   final double feelsLikeTemp;
-  final double pressure;
-  final String humidity;
+  final int pressure; //ex double
+  final int humidity;  //ex double
   final String weatherMain;
   final String weatherDescription;
-  final double cloudness;
+  final int cloudness; //ex double
   final double windSpeed;
-  final double preciptationProbability;
-  final double preciptationmmh;
-  final String timeZone;
+  // final int preciptationProbability;//ex double, dont exist in api?
+  final int preciptationmmh;//ex double
+  final int timeZone;
   final DateTime currentTime;
   final String cityName;
+  final String countryName;
 
   Weather(
       {required this.latitude,
@@ -30,11 +31,12 @@ class Weather {
       required this.weatherDescription,
       required this.cloudness,
       required this.windSpeed,
-      required this.preciptationProbability,
+      // required this.preciptationProbability,
       required this.preciptationmmh,
       required this.timeZone,
       required this.currentTime,
-      required this.cityName});
+      required this.cityName,
+      required this.countryName});
 
 factory Weather.fromJson(Map<dynamic, dynamic> json) {
   /// returns a weather using data fetched from API
@@ -51,11 +53,12 @@ factory Weather.fromJson(Map<dynamic, dynamic> json) {
       weatherDescription: json['weather'][0]['description'],
       cloudness: json['clouds']['all'],
       windSpeed: json['wind']['speed'],
-      preciptationProbability: json['pop'],
+      // preciptationProbability: json['pop'],
       preciptationmmh: json.containsKey('rain') ? json['rain']['3h'] : 0,
       timeZone: json['timezone'],
       currentTime: DateTime.fromMillisecondsSinceEpoch(json['dt'] * 1000, isUtc: true),
-      cityName: json['city']['name'], // maybe deprecated
+      cityName: json['name'], // maybe deprecated
+      countryName: json['sys']['country'], // maybe deprecated
     );
   }
 }

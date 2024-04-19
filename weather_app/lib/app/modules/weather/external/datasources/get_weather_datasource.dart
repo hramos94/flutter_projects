@@ -12,7 +12,7 @@ class GetWeatherDatasource implements IGetWeatherDatasource {
   Future<String?> getWeather(double latitude, double longitude) async {
     try {
       final uri = Uri.parse(
-          '${WeatherRoutes.apiRoute}lat=$latitude&lon=$longitude&appid=${WeatherRoutes.apiKey}');
+          '${WeatherRoutes.apiRoute}lat=$latitude&lon=$longitude&appid=${WeatherRoutes.apiKey}&units=imperial');
       final response = await httpClient.get(uri);
 
       if (response.statusCode == 200) {
